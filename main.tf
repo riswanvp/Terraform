@@ -5,6 +5,11 @@ terraform {
         version = "~>2.70"
     }
   }
+  backend "s3" {
+     bucket = "terraform-statef-files"
+     key    = "Test-Ec2/terraform.tfstate"
+     region = "ap-south-1"
+  }
 }
 provider "aws" {
     region = var.aws_region
@@ -13,5 +18,6 @@ provider "aws" {
 resource "aws_instance" "DevOps-vm" {
   ami = var.image_id
   instance_type = "t2.micro"
+  key_name = var.key_name
   subnet_id = var.subnet_id
 }
