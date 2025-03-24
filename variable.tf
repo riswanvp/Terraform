@@ -11,5 +11,5 @@ variable "subnet_id" {
     description = "Public subnet use for the server"
 }
 variable "key_name" {
-  default = "terraform"
+  default = "new-key"
 }
