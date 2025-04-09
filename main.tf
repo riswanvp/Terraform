@@ -20,6 +20,7 @@ resource "aws_instance" "DevOps-vm" {
   instance_type = "t2.micro"
   key_name = var.key_name
   subnet_id = var.subnet_id
+  vpc_security_group_ids = ["sg-836240583827"]
   #connection {
   #  type = "ssh"
   #  user = "ubuntu"
